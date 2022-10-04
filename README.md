@@ -22,8 +22,8 @@
   - Ex) `routes/api.ts`
   
 ## 로컬 환경변수
-- 로컬용 `production` 환경변수는 `.env`에 저장하세요.
-- 로컬용 'development' 환경변수는 `.env.local`에 저장하세요.
+- `production`용 환경변수는 `.env`에 저장하세요.
+- `development`용 환경변수는 `.env.local`에 저장하세요.
 
 ## 배포
 
