@@ -15,7 +15,7 @@
 - 스타일 폴더를 따로 만들지 마세요. 대신, 컴포넌트 옆에 `scss` 파일을 함께 만드세요.
 - 컴포넌트 스타일링은 `[componentName].module.scss`를 이용하고, 페이지 스타일링은 `[pageName].scss`를 이용하세요.
 
-## 서비스 && 라우팅
+## 서비스 & 라우팅
 
 - 커스텀 서비스나 라우팅이 필요할 때마다, service 및 routes 폴더에 만드세요.
   - `service/passport.ts`
