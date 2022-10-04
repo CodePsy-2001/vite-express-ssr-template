@@ -20,6 +20,10 @@
 - 커스텀 서비스나 라우팅이 필요할 때마다, service 및 routes 폴더에 만드세요.
   - Ex) `service/passport.ts`
   - Ex) `routes/api.ts`
+  
+## 로컬 환경변수
+- 로컬용 `production` 환경변수는 `.env`에 저장하세요.
+- 로컬용 'development' 환경변수는 `.env.local`에 저장하세요.
 
 ## 배포
 
