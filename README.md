@@ -26,7 +26,7 @@
 
 `ioredis`, `mongoose` 등의 일반적인 driver 라이브러리는 vercel 등 serverless 배포 솔루션과 궁합이 좋지 않습니다.
 
-**Railway, AWS EC2 등 실체가 있는 서버로 배포하세요!!**
+> **Railway, AWS EC2 등 실체가 있는 서버로 배포하세요!!**
 
 ### serverless function
 
