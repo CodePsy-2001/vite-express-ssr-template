@@ -1,0 +1,69 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "indent": ["off"],
+    "max-len": ["warn", {"code": 140}],
+    "camelcase": ["off"],
+    "no-unused-vars": ["off"],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "import/no-unresolved": ["off"],
+    "import/prefer-default-export": ["off"],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/react-in-jsx-scope": ["off"],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx",
+          ".js",
+          ".ts"
+        ]
+      }
+    ],
+    "react/prop-types": ["off"],
+    "react/jsx-one-expression-per-line": ["off"],
+    "react/jsx-props-no-spreading": [
+      "warn",
+      {
+        "html": "ignore",
+        "explicitSpread": "ignore"
+      }
+    ],
+    "react/no-unescaped-entities": ["warn"],
+    "jsx-a11y/label-has-associated-control": ["warn"],
+    "no-param-reassign": ["warn"],
+    "react/no-array-index-key": ["warn"],
+    "no-underscore-dangle": ["warn"],
+    "no-irregular-whitespace": ["warn"],
+    "react/require-default-props": ["warn"]
+  }
+}

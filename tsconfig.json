@@ -1,0 +1,43 @@
+{
+  "include": [
+    "node_modules/@sendbird/uikit-react/index.d.ts",
+    "node_modules/@sendbird/src/**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": [
+      "vite/client"
+    ],
+    "jsx": "react",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "components/*"
+      ],
+      "!/*": [
+        "@types/*"
+      ],
+      "renderer/*": [
+        "renderer/*"
+      ]
+    },
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}

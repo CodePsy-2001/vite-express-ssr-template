@@ -1,0 +1,109 @@
+/* This SCSS is common to all pages */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+html,
+body,
+#page-view {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  color: var(--primary-color);
+  background: lighten(skyblue, 20%);
+  font-family: Pretendard, Nanum Gothic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+}
+
+#page-view {
+  background: white;
+  // max-width: 500px; // for mobile-first
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+* {
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #959595;
+    border-radius: 10rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #767676;
+  }
+}
+
+header,
+section,
+article,
+footer {
+  width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  outline: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(93%);
+  }
+}
+
+/* utility classes */
+.not-draggable {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}

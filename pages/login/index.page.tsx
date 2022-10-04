@@ -1,0 +1,11 @@
+import React from 'react';
+
+export { Page }
+
+function Page() {
+  return (
+    <div>
+      <h1>Login page</h1>
+    </div>
+  )
+}
