@@ -6,12 +6,12 @@ const ssrPagesRouter = Router();
 
 async function ssrPages(req: Request, res: Response, next: NextFunction) {
   // 로그인 리다이렉트
+  // 페이지를 렌더하기 전에 로그인을 거른다
   // if (req.cookies.user === undefined) {
   //   res.redirect('/login');
   //   return;
   // }
 
-  // 페이지를 렌더하기 전에 로그인을 거른다
   const pageContextInit = {
     urlOriginal: req.originalUrl,
   };

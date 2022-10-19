@@ -27,37 +27,10 @@
 
 ## 배포
 
-### general server
-
 `ioredis`, `mongoose` 등의 일반적인 driver 라이브러리는 vercel 등 serverless 배포 솔루션과 궁합이 좋지 않습니다.
 
-> **Railway, AWS EC2 등 실체가 있는 서버로 배포하세요!!**
+**Railway, AWS EC2 등 실체가 있는 서버로 배포하세요!!**
 
-### serverless function
+빌드 커맨드: `yarn build` 또는 `vite build`
 
-vercel 등 서버리스 컨테이너에 배포하고 싶다면 다음 사항을 따르세요.
-
-- 라이브러리 제한
-  - `mongoose` 등 driver 라이브러리 금지
-  - `serverless-mysql` 등 serverless 전용 라이브러리 이용
-  - `@upstash/redis` 등 HTTP로 래핑한 라이브러리 이용
-  - `graphql` 등 DB 연결은 외부 서버에 맡기고, 본 repo에선 HTTP 요청만 처리
-- express 기능 제한
-  - router 중첩 지양
-  - 중복되는 router 기능은 페이지마다 onBeforeRender 함수 안에서 구현
-- vercel 설정
-  1. 루트 디렉토리에 vercel.json 생성
-
-      ```json
-      {
-        "rewrites": [
-          {
-            "source": "/((?!assets/).*)",
-            "destination": "/api/prod.ts"
-          }
-        ]
-      }
-      ```
-
-  2. Vite 기본 템플릿 선택
-  3. 기타 build 및 deploy 명령 설정
+배포 커맨드: `yarn serve` 또는 `ts-node ./server/server`
