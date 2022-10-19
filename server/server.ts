@@ -10,6 +10,8 @@ import apiRouter from '../routes/api';
 
 const root = `${__dirname}/..`;
 const isProduction = process.env.ENVIRONMENT === 'production';
+env({ path: path.join(root, '.env') });
+env({ path: path.join(root, '.env.local') });
 const port = parseInt(process.env.PORT ?? '3000', 10);
 
 
@@ -17,8 +19,6 @@ const app = express();
 
 
 async function startDevServer() {
-  env({ path: path.join(root, '.env.local') });
-
   const viteDevServer = await createServer({
     root,
     server: { middlewareMode: true }
@@ -36,8 +36,6 @@ async function startDevServer() {
 
 
 function startProdServer() {
-  env({ path: path.join(root, '.env') });
-
   app.use(compression({ threshold: 0 }));
   app.use(sirv(`${root}dist/client`, { dev: false }));
   app.use('*', pagesRouter);
