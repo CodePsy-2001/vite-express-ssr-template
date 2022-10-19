@@ -37,7 +37,7 @@ async function startDevServer() {
 
 function startProdServer() {
   app.use(compression({ threshold: 0 }));
-  app.use(sirv(`${root}dist/client`, { dev: false }));
+  app.use(sirv(`${root}/dist/client`, { dev: false }));
   app.use('*', pagesRouter);
   app.use('/api', apiRouter);
 
