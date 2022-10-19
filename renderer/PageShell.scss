@@ -1,6 +1,10 @@
 /* This SCSS is common to all pages */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
 
+:root {
+  --primary-color: #1A1A1A;
+}
+
 html {
   -webkit-text-size-adjust: none;
 }
@@ -19,7 +23,7 @@ body,
 
 #page-view {
   background: white;
-  // max-width: 500px; // for mobile-first
+  max-width: 500px; // for mobile-first
   display: flex;
   flex-direction: column;
   margin: auto;

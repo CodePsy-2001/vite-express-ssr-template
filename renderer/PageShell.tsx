@@ -1,6 +1,6 @@
-import React from 'react'
-import { PageContextProvider } from './usePageContext'
-import type { PageContext } from '!/renderer'
+import React from 'react';
+import { PageContextProvider } from './usePageContext';
+import type { PageContext } from '!/renderer';
 import './PageShell.scss';
 
 export { PageShell }

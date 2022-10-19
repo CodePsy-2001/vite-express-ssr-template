@@ -9,36 +9,45 @@ import apiRouter from '../routes/api';
 // import mongoose from "mongoose"
 
 const root = `${__dirname}/..`;
-const isProduction = process.env.NODE_ENV === 'production';
-const port = 3000;
-
-if (isProduction) { env({ path: path.join(root, '.env') }); }
-else { env({ path: path.join(root, '.env.local') }); }
+const isProduction = process.env.ENVIRONMENT === 'production';
+const port = parseInt(process.env.PORT ?? '3000', 10);
 
 
 const app = express();
 
-(async () => {
-  if (isProduction) {
-    app.use(compression());
-    app.use(sirv(`${root}/dist/client`));
-    return;
-  }
 
-  const viteDevServer = await createServer({ root, server: { middlewareMode: true } });
+async function startDevServer() {
+  env({ path: path.join(root, '.env.local') });
+
+  const viteDevServer = await createServer({
+    root,
+    server: { middlewareMode: true }
+  });
+
   app.use(viteDevServer.middlewares);
-})();
 
-app.get('*', pagesRouter);
-app.get('/api', apiRouter);
+  app.get('*', pagesRouter);
+  app.get('/api', apiRouter);
 
-// connect to mongodb
-// mongoose
-//   .connect(process.env.MONGO_URL ?? '')
-//   .then(() => console.log('Successfully connected to mongodb'))
-//   .catch((e) => console.error(e))
+  app.listen(port, () => {
+    console.log(`Dev Server running at http://localhost:${port}`);
+  });
+}
 
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+function startProdServer() {
+  env({ path: path.join(root, '.env') });
+
+  app.use(compression({ threshold: 0 }));
+  app.use(sirv(`${root}dist/client`, { dev: false }));
+  app.use('*', pagesRouter);
+  app.use('/api', apiRouter);
+
+  app.listen(port, () => {
+    console.log(`Production Server running at http://localhost:${port}`);
+  });
+}
+
+
+if (isProduction) { startProdServer(); }
+else { startDevServer(); }

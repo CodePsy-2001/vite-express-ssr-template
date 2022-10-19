@@ -17,6 +17,3 @@ async function render(pageContext: PageContextClient) {
     </BrowserRouter>
   )
 }
-
-// export const clientRouting = true;
-// !! WARNING !! Before doing so, read https://vite-plugin-ssr.com/clientRouting
