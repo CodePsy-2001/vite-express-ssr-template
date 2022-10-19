@@ -21,9 +21,9 @@
   - `service/passport.ts`
   - `routes/api.ts`
   
-## 로컬 환경변수
-- `production`용 환경변수는 `.env`에 저장하세요.
-- `development`용 환경변수는 `.env.local`에 저장하세요.
+## 환경변수
+-  기본적인 환경변수는 `.env`에 저장하세요.
+-  로컬용 환경변수는 `.env.local`에 저장하세요. fallback 방식으로 적용됩니다. (prod/dev 실행 커맨드 무관)
 
 ## 배포
 
