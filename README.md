@@ -4,7 +4,7 @@
 
 `vite-plugin-ssr`에 `express`와 `react`, `react-router`를 덧칠한 기본 템플릿입니다.
 
-`yarn berry`를 사용합니다.(오류시 .yarnrc.yml 에 nodeLinker: node-modules 를 설정하고 legacy mode로 돌리세요)
+`yarn berry`를 사용합니다. (오류시 .yarnrc.yml 에 nodeLinker: node-modules 를 설정하고 legacy mode로 돌리세요)
 
 ## 타입 선언
 
