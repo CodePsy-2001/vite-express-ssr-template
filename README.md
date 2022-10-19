@@ -3,6 +3,7 @@
 ## 개요
 
 `vite-plugin-ssr`에 `express`와 `react`, `react-router`를 덧칠한 기본 템플릿입니다.
+`yarn berry`를 사용합니다.
 
 ## 타입 선언
 
